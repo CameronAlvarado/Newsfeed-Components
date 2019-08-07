@@ -142,7 +142,7 @@ date1.textContent = date;
 paragraph1.textContent = para1;
 paragraph2.textContent = para2;
 paragraph3.textContent = para3;
-span.textContent = "This is a button";
+span.textContent = "Click to expand/collapse";
 
 span.addEventListener('click', function() {
   article.classList.toggle('article-open');
