@@ -89,7 +89,7 @@ const data = [
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
-  
+
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
@@ -112,3 +112,53 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
+const container = document.querySelector('.articles');
+
+function createComp(title, date, para1, para2, para3) {
+
+const article = document.createElement('div');
+const title1 = document.createElement('h2');
+const date1 = document.createElement('p');
+const paragraph1 = document.createElement('p');
+const paragraph2 = document.createElement('p');
+const paragraph3 = document.createElement('p');
+const span = document.createElement('span');
+
+// container.appendChild(article);
+article.appendChild(title1);
+article.appendChild(date1);
+article.appendChild(paragraph1);
+article.appendChild(paragraph2);
+article.appendChild(paragraph3);
+article.appendChild(span);
+
+article.classList.add('article');
+date1.classList.add('date');
+span.classList.add('expandButton');
+
+// set text content
+title1.textContent = title;
+date1.textContent = date;
+paragraph1.textContent = para1;
+paragraph2.textContent = para2;
+paragraph3.textContent = para3;
+span.textContent = "This is a button";
+
+span.addEventListener('click', function() {
+  article.classList.toggle('article-open');
+});
+
+return article;
+};
+
+data.forEach(element => {
+  console.log('creating article:', element.title)
+  container.appendChild(createComp(element.title, element.date, element.firstParagraph, element.secondParagraph, element.thirdParagraph))
+});
+
+// data.forEach(article => {
+//   console.log('CREATING ARTICLE:', data.title);
+//   articles.appendChild(articleGen(article.title, article.date, article.firstParagraph, article.secondParagraph, article.thirdParagraph))
+// });
+
+
