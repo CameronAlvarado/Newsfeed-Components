@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Dirty Javascript by Devin Dias',
+    date: 'Aug 7, 2019',
+    firstParagraph: `[NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW]`,
+
+    secondParagraph: `[NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW]`,
+
+    thirdParagraph: `[NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW] [NSFW]`
   }
 ];
 
@@ -116,39 +125,39 @@ const container = document.querySelector('.articles');
 
 function createComp(title, date, para1, para2, para3) {
 
-const article = document.createElement('div');
-const title1 = document.createElement('h2');
-const date1 = document.createElement('p');
-const paragraph1 = document.createElement('p');
-const paragraph2 = document.createElement('p');
-const paragraph3 = document.createElement('p');
-const span = document.createElement('span');
+  const article = document.createElement('div');
+  const title1 = document.createElement('h2');
+  const date1 = document.createElement('p');
+  const paragraph1 = document.createElement('p');
+  const paragraph2 = document.createElement('p');
+  const paragraph3 = document.createElement('p');
+  const span = document.createElement('span');
 
-// container.appendChild(article);
-article.appendChild(title1);
-article.appendChild(date1);
-article.appendChild(paragraph1);
-article.appendChild(paragraph2);
-article.appendChild(paragraph3);
-article.appendChild(span);
+  // container.appendChild(article);
+  article.appendChild(title1);
+  article.appendChild(date1);
+  article.appendChild(paragraph1);
+  article.appendChild(paragraph2);
+  article.appendChild(paragraph3);
+  article.appendChild(span);
 
-article.classList.add('article');
-date1.classList.add('date');
-span.classList.add('expandButton');
+  article.classList.add('article');
+  date1.classList.add('date');
+  span.classList.add('expandButton');
 
-// set text content
-title1.textContent = title;
-date1.textContent = date;
-paragraph1.textContent = para1;
-paragraph2.textContent = para2;
-paragraph3.textContent = para3;
-span.textContent = "Click to expand/collapse";
+  // set text content
+  title1.textContent = title;
+  date1.textContent = date;
+  paragraph1.textContent = para1;
+  paragraph2.textContent = para2;
+  paragraph3.textContent = para3;
+  span.textContent = "Click to expand/collapse";
 
-span.addEventListener('click', function() {
-  article.classList.toggle('article-open');
-});
+  span.addEventListener('click', function() {
+    article.classList.toggle('article-open');
+  });
 
-return article;
+  return article;
 };
 
 data.forEach(element => {
